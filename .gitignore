@@ -1,0 +1,16 @@
+# stuff created by SS that we don't want to sync (for now at least)
+*.exe
+*.sso
+*.ss_new
+*.bar
+*.rep
+*.cov
+*.dep
+*.hes
+*.rpt
+*.log
+*.cor
+*.eva
+*.std
+runnumber.ss
+variance
