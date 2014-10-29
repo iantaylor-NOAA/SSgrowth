@@ -1,6 +1,5 @@
-SS
+SSgrowth
 ==
+Models and notes for a half-day session on teaching modeling growth in Stock Synthesis
 
-all kinds of SS stuff
-
-This stuff is mostly just for Ian
+Not yet sure how GitHub will work for this use.
