@@ -1,0 +1,279 @@
+###
+ADMB output
+key = simD_fitB100
+2012-08-05 21:10:56
+###
+ 
+Error trying to open data input file ss3_wi~2.dat
+ reading from STARTER.SS
+ reading from data file
+Data read sucessful 999
+
+ reading forecast file 
+ reading from control  file
+If you see 999, we got to the end of the control file successfully! 999
+
+
+Estimating...please wait...
+ MG setup OK 
+ growth OK
+ growth-2 OK
+ natmort OK
+ migr OK
+ growth OK, ready to call selex 
+ selex OK, ready to call ALK and fishselex 
+ ready for virgin age struc 
+ ready for initial age struc 
+ OK with initial conditions 
+ OK with time series 
+ did survey obj_fun  0 -10.0549 0
+ did lencomp obj_fun  520.701 320.297 0
+ did agecomp obj_fun  0 1548.26 0
+ did meanlength obj_fun  0 0 -22321.1
+ initequ_catch -log(L) 0
+ did recruitdev obj_fun -15.6695
+ OK with obj_func -19898.2
+
+Initial statistics: 1 variables; iteration 0; function evaluation 0; phase 1
+Function value -1.9898186e+004; maximum gradient component mag  2.8407e+003
+
+ - final statistics:
+1 variables; iteration 4; function evaluation 7
+Function value -1.9908e+004; maximum gradient component mag -1.4008e+000
+Exit code = 1;  converg criter  1.0000e+001
+
+Initial statistics: 94 variables; iteration 0; function evaluation 0; phase 2
+Function value -1.9914091e+004; maximum gradient component mag -8.4734e+003
+
+Intermediate statistics: 94 variables; iteration 10; function evaluation 17; phase 2
+Function value -2.0011767e+004; maximum gradient component mag -5.4991e+003
+94 variables; iteration 20; function evaluation 28; phase 2
+Function value -2.0013449e+004; maximum gradient component mag -4.8467e+003
+94 variables; iteration 30; function evaluation 42; phase 2
+Function value -2.0018915e+004; maximum gradient component mag -7.2253e+002
+94 variables; iteration 40; function evaluation 56; phase 2
+Function value -2.0019687e+004; maximum gradient component mag -3.3724e+002
+94 variables; iteration 50; function evaluation 71; phase 2
+Function value -2.0020239e+004; maximum gradient component mag  2.4382e+002
+94 variables; iteration 60; function evaluation 87; phase 2
+Function value -2.0020409e+004; maximum gradient component mag -5.6295e+001
+Maximum number of function evaluations exceeded
+ - final statistics:
+94 variables; iteration 68; function evaluation 100
+Function value -2.0020e+004; maximum gradient component mag -2.8621e+001
+Exit code = 3;  converg criter  1.0000e+001
+
+Initial statistics: 101 variables; iteration 0; function evaluation 0; phase 3
+Function value -2.0021184e+004; maximum gradient component mag  2.6032e+002
+
+Intermediate statistics: 101 variables; iteration 10; function evaluation 13; phase 3
+Function value -2.0021515e+004; maximum gradient component mag -3.6831e+002
+101 variables; iteration 20; function evaluation 27; phase 3
+Function value -2.0021880e+004; maximum gradient component mag -2.7617e+002
+101 variables; iteration 30; function evaluation 38; phase 3
+Function value -2.0022001e+004; maximum gradient component mag -2.4433e+002
+101 variables; iteration 40; function evaluation 50; phase 3
+Function value -2.0022270e+004; maximum gradient component mag  1.9376e+002
+101 variables; iteration 50; function evaluation 67; phase 3
+Function value -2.0022441e+004; maximum gradient component mag  1.4285e+002
+101 variables; iteration 60; function evaluation 83; phase 3
+Function value -2.0022487e+004; maximum gradient component mag  4.0345e+001
+101 variables; iteration 70; function evaluation 99; phase 3
+Function value -2.0022505e+004; maximum gradient component mag -3.9861e+001
+Maximum number of function evaluations exceeded
+ - final statistics:
+101 variables; iteration 71; function evaluation 100
+Function value -2.0023e+004; maximum gradient component mag -3.9861e+001
+Exit code = 3;  converg criter  1.0000e+000
+
+Initial statistics: 101 variables; iteration 0; function evaluation 0; phase 4
+Function value -2.0022580e+004; maximum gradient component mag -3.9997e+001
+
+Intermediate statistics: 101 variables; iteration 10; function evaluation 12; phase 4
+Function value -2.0022583e+004; maximum gradient component mag -3.3936e+001
+101 variables; iteration 20; function evaluation 27; phase 4
+Function value -2.0022585e+004; maximum gradient component mag -3.0273e+001
+101 variables; iteration 30; function evaluation 43; phase 4
+Function value -2.0022595e+004; maximum gradient component mag  1.2241e+001
+101 variables; iteration 40; function evaluation 58; phase 4
+Function value -2.0022596e+004; maximum gradient component mag  2.5842e+000
+
+ - final statistics:
+101 variables; iteration 42; function evaluation 60
+Function value -2.0023e+004; maximum gradient component mag  3.1274e-001
+Exit code = 1;  converg criter  1.0000e+000
+
+ - final statistics:
+101 variables; iteration 0; function evaluation 0
+Function value -2.0023e+004; maximum gradient component mag -5.2438e-001
+Exit code = 0;  converg criter  1.0000e+000
+
+Initial statistics: 102 variables; iteration 0; function evaluation 0; phase 6
+Function value -2.0022604e+004; maximum gradient component mag  1.9003e+001
+
+Intermediate statistics: 102 variables; iteration 10; function evaluation 16; phase 6
+Function value -2.0022640e+004; maximum gradient component mag -3.9288e+001
+102 variables; iteration 20; function evaluation 28; phase 6
+Function value -2.0022650e+004; maximum gradient component mag -3.8337e+001
+102 variables; iteration 30; function evaluation 41; phase 6
+Function value -2.0022659e+004; maximum gradient component mag -1.5232e+001
+
+ - final statistics:
+102 variables; iteration 32; function evaluation 44
+Function value -2.0023e+004; maximum gradient component mag  8.4946e-001
+Exit code = 1;  converg criter  1.0000e+000
+
+Initial statistics: 103 variables; iteration 0; function evaluation 0; phase 7
+Function value -2.0022662e+004; maximum gradient component mag -1.0040e+001
+
+Intermediate statistics: 103 variables; iteration 10; function evaluation 13; phase 7
+Function value -2.0023087e+004; maximum gradient component mag  2.4111e+002
+103 variables; iteration 20; function evaluation 28; phase 7
+Function value -2.0023414e+004; maximum gradient component mag  2.5046e+002
+103 variables; iteration 30; function evaluation 43; phase 7
+Function value -2.0023900e+004; maximum gradient component mag  1.3121e+002
+103 variables; iteration 40; function evaluation 57; phase 7
+Function value -2.0023994e+004; maximum gradient component mag  5.2706e+001
+103 variables; iteration 50; function evaluation 74; phase 7
+Function value -2.0024039e+004; maximum gradient component mag -1.3214e+001
+103 variables; iteration 60; function evaluation 89; phase 7
+Function value -2.0024041e+004; maximum gradient component mag  5.8970e-001
+103 variables; iteration 70; function evaluation 106; phase 7
+Function value -2.0024041e+004; maximum gradient component mag  1.3419e+000
+103 variables; iteration 80; function evaluation 122; phase 7
+Function value -2.0024041e+004; maximum gradient component mag  4.0784e-001
+103 variables; iteration 90; function evaluation 139; phase 7
+Function value -2.0024041e+004; maximum gradient component mag  1.4204e-002
+103 variables; iteration 100; function evaluation 155; phase 7
+Function value -2.0024041e+004; maximum gradient component mag -3.0754e-003
+  ic > imax  in fminim is answer attained ?
+Function minimizer not making progress ... is minimum attained?
+Minimprove criterion =  0.0000e+000
+
+ - final statistics:
+103 variables; iteration 103; function evaluation 188
+Function value -2.0024e+004; maximum gradient component mag -6.4829e-004
+Exit code = 1;  converg criter  1.0000e-004
+ writing big output now 
+Estimating row 1 out of 103 for hessian
+Estimating row 2 out of 103 for hessian
+Estimating row 3 out of 103 for hessian
+Estimating row 4 out of 103 for hessian
+Estimating row 5 out of 103 for hessian
+Estimating row 6 out of 103 for hessian
+Estimating row 7 out of 103 for hessian
+Estimating row 8 out of 103 for hessian
+Estimating row 9 out of 103 for hessian
+Estimating row 10 out of 103 for hessian
+Estimating row 11 out of 103 for hessian
+Estimating row 12 out of 103 for hessian
+Estimating row 13 out of 103 for hessian
+Estimating row 14 out of 103 for hessian
+Estimating row 15 out of 103 for hessian
+Estimating row 16 out of 103 for hessian
+Estimating row 17 out of 103 for hessian
+Estimating row 18 out of 103 for hessian
+Estimating row 19 out of 103 for hessian
+Estimating row 20 out of 103 for hessian
+Estimating row 21 out of 103 for hessian
+Estimating row 22 out of 103 for hessian
+Estimating row 23 out of 103 for hessian
+Estimating row 24 out of 103 for hessian
+Estimating row 25 out of 103 for hessian
+Estimating row 26 out of 103 for hessian
+Estimating row 27 out of 103 for hessian
+Estimating row 28 out of 103 for hessian
+Estimating row 29 out of 103 for hessian
+Estimating row 30 out of 103 for hessian
+Estimating row 31 out of 103 for hessian
+Estimating row 32 out of 103 for hessian
+Estimating row 33 out of 103 for hessian
+Estimating row 34 out of 103 for hessian
+Estimating row 35 out of 103 for hessian
+Estimating row 36 out of 103 for hessian
+Estimating row 37 out of 103 for hessian
+Estimating row 38 out of 103 for hessian
+Estimating row 39 out of 103 for hessian
+Estimating row 40 out of 103 for hessian
+Estimating row 41 out of 103 for hessian
+Estimating row 42 out of 103 for hessian
+Estimating row 43 out of 103 for hessian
+Estimating row 44 out of 103 for hessian
+Estimating row 45 out of 103 for hessian
+Estimating row 46 out of 103 for hessian
+Estimating row 47 out of 103 for hessian
+Estimating row 48 out of 103 for hessian
+Estimating row 49 out of 103 for hessian
+Estimating row 50 out of 103 for hessian
+Estimating row 51 out of 103 for hessian
+Estimating row 52 out of 103 for hessian
+Estimating row 53 out of 103 for hessian
+Estimating row 54 out of 103 for hessian
+Estimating row 55 out of 103 for hessian
+Estimating row 56 out of 103 for hessian
+Estimating row 57 out of 103 for hessian
+Estimating row 58 out of 103 for hessian
+Estimating row 59 out of 103 for hessian
+Estimating row 60 out of 103 for hessian
+Estimating row 61 out of 103 for hessian
+Estimating row 62 out of 103 for hessian
+Estimating row 63 out of 103 for hessian
+Estimating row 64 out of 103 for hessian
+Estimating row 65 out of 103 for hessian
+Estimating row 66 out of 103 for hessian
+Estimating row 67 out of 103 for hessian
+Estimating row 68 out of 103 for hessian
+Estimating row 69 out of 103 for hessian
+Estimating row 70 out of 103 for hessian
+Estimating row 71 out of 103 for hessian
+Estimating row 72 out of 103 for hessian
+Estimating row 73 out of 103 for hessian
+Estimating row 74 out of 103 for hessian
+Estimating row 75 out of 103 for hessian
+Estimating row 76 out of 103 for hessian
+Estimating row 77 out of 103 for hessian
+Estimating row 78 out of 103 for hessian
+Estimating row 79 out of 103 for hessian
+Estimating row 80 out of 103 for hessian
+Estimating row 81 out of 103 for hessian
+Estimating row 82 out of 103 for hessian
+Estimating row 83 out of 103 for hessian
+Estimating row 84 out of 103 for hessian
+Estimating row 85 out of 103 for hessian
+Estimating row 86 out of 103 for hessian
+Estimating row 87 out of 103 for hessian
+Estimating row 88 out of 103 for hessian
+Estimating row 89 out of 103 for hessian
+Estimating row 90 out of 103 for hessian
+Estimating row 91 out of 103 for hessian
+Estimating row 92 out of 103 for hessian
+Estimating row 93 out of 103 for hessian
+Estimating row 94 out of 103 for hessian
+Estimating row 95 out of 103 for hessian
+Estimating row 96 out of 103 for hessian
+Estimating row 97 out of 103 for hessian
+Estimating row 98 out of 103 for hessian
+Estimating row 99 out of 103 for hessian
+Estimating row 100 out of 103 for hessian
+Estimating row 101 out of 103 for hessian
+Estimating row 102 out of 103 for hessian
+Estimating row 103 out of 103 for hessian
+
+Finish time: Sun Aug 05 21:10:53 2012
+Elapsed time: 0 hours, 10 minutes, 18 seconds.
+Final gradient: 0.000648293
+
+Finished writing COVAR.SSO
+ mceval counter: 0
+ writing big output now 
+ finished big report 
+ finished summary report 
+ finished rebuilder report 
+ N_nudata: 1
+ finished nudata report 
+ Write new starter file 
+ Write new forecast file 
+ Write new control file 
+ finished nucontrol report 
+
+!!  Run has completed  !!            See warning.sso for N warnings: 1

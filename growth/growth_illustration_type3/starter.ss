@@ -1,7 +1,7 @@
 #V3.21e
 #C starter comment here
-simple.dat
-simple.ctl
+growth_example1_data.ss
+growth_example1_control.ss
 0 # 0=use init values in control file; 1=use ss3.par
 1 # run display detail (0,1,2)
 1 # detailed age-structured reports in REPORT.SSO (0,1) 
