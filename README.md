@@ -14,6 +14,7 @@ Outline
    * Specification of length variability around the mean growth curve
    * Treatment of male growth as offsets from female growth
    * Growth between birth and first reference age
+   * Calculation of length in plus group
 * Overview of example models
    * Length comps and conditional age-at-length comps (yelloweye-like model from simulation analysis for paper on growth platoons -- but without growth platoons)
    * Age comps and mean length-at-age observations (simplified mackerel from Paul)

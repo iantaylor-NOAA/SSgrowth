@@ -12,5 +12,12 @@
 *.cor
 *.eva
 *.std
+*.b0*
+*.p0*
+*.r0*
+*.html
+*.png
+*.csv
 runnumber.ss
 variance
+growth/old/*

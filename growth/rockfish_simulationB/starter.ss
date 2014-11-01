@@ -1,7 +1,7 @@
 #C rockfish_simulation_control.ss
 #C example model for simulating a variety of composition data
 #
-rockfish_simulation_data.ss #_datfile
+rockfish_simulation_dataB.ss #_datfile
 rockfish_simulation_control.ss #_ctlfile
 0 #_init_values_src
 0 #_run_display_detail
