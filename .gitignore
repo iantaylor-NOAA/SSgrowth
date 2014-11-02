@@ -16,8 +16,8 @@
 *.p0*
 *.r0*
 *.html
-*.png
 *.csv
 runnumber.ss
 variance
-growth/old/*
+models/*/plots/
+models/old/*
