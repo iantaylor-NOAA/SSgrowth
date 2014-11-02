@@ -1,8 +1,8 @@
 #C 2014 Hake starter file - modified to reference simplified input files
 ###################################################
 
-hake2014_data_simplified.ss    # Data file
-hake2014_control_simplified.ss # Control file
+hake2014_simplified_data.ss    # Data file
+hake2014_simplified_control.ss # Control file
 
 0       # Read initial values from .par file: 0=no,1=yes
 1       # DOS display detail: 0,1,2
@@ -20,7 +20,7 @@ hake2014_control_simplified.ss # Control file
 -1      # Min year for spbio sd_report (neg val = styr-2, virgin state)
 -2      # Max year for spbio sd_report (neg val = endyr+1)
 0       # N individual SD years
-0.00001 # Ending convergence criteria
+0.0001  # Ending convergence criteria
 0       # Retrospective year relative to end year
 3       # Min age for summary biomass
 1       # Depletion basis: denom is: 0=skip; 1=rel X*B0; 2=rel X*Bmsy; 3=rel X*B_styr

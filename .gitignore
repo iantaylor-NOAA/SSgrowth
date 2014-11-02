@@ -1,5 +1,5 @@
 # stuff created by SS that we don't want to sync (for now at least)
-models/*.exe
+models/*/*.exe
 *.sso
 *.ss_new
 *.bar
@@ -17,7 +17,9 @@ models/*.exe
 *.r0*
 *.html
 *.csv
+ss3_safe_win64.par
 runnumber.ss
 variance
 models/*/plots/
 models/old/*
+~$*
