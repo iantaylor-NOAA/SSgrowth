@@ -1,5 +1,5 @@
 # stuff created by SS that we don't want to sync (for now at least)
-*.exe
+models/*.exe
 *.sso
 *.ss_new
 *.bar
