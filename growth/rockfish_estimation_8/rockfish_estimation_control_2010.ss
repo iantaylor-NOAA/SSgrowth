@@ -42,13 +42,13 @@
    10     35       18       30      -1  99     2       0       0         0         0          0     0         0 #       L_at_Amin_Fem_GP_1  
    40    120       62       66      -1  99     1       0       0         0         0          0     0         0 #       L_at_Amax_Fem_GP_1  
  0.01    0.2    0.047     0.05      -1  99     2       0       0         0         0          0     0         0 #       VonBert_K_Fem_GP_1  
- 0.05    0.2     0.13     0.19      -1  99     3       0       0         0         0          0     0         0 #       CV_young_Fem_GP_1   
+ 0.05    0.4     0.13     0.19      -1  99     3       0       0         0         0          0     0         0 #       CV_young_Fem_GP_1   
    -2      2     -0.6      0.1      -1  99     3       0       0         0         0          0     0         0 #       CV_old_Fem_GP_1     
    -3      3        0        0      -1 0.8     6       0       0         0         0          0     0         0 #       NatM_p_1_Mal_GP_1   
    -3      3        0        0      -1 0.8     3       0       0         0         0          0     0         0 #       L_at_Amin_Mal_GP_1  
    -3      3        0        0      -1 0.8     2       0       0         0         0          0     0         0 #       L_at_Amax_Mal_GP_1  
    -3      3        0        0      -1 0.8     3       0       0         0         0          0     0         0 #       VonBert_K_Mal_GP_1  
-   -3      3        0        0      -1 0.8     3       0       0         0         0          0     0         0 #       CV_young_Mal_GP_1   
+   -2      2        0        0      -1 0.8     3       0       0         0         0          0     0         0 #       CV_young_Mal_GP_1   
    -2      2     -0.6      0.1      -1  99     3       0       0         0         0          0     0         0 #       CV_old_Mal_GP_1     
    -3      3 9.77E-06 2.09E-05      -1  99   -50       0       0         0         0          0     0         0 #       Wtlen_1_Fem         
    -3      4  3.17125  2.96956      -1  99   -50       0       0         0         0          0     0         0 #       Wtlen_2_Fem         
@@ -173,11 +173,11 @@
 1 #_maxlambdaphase
 1 #_sd_offset
 #
-1 # number of changes to make to default Lambdas (default value is 1.0)
+0 # number of changes to make to default Lambdas (default value is 1.0)
 # Like_comp codes:  1=surv; 2=disc; 3=mnwt; 4=length; 5=age; 6=SizeFreq; 7=sizeage; 8=catch; 
 # 9=init_equ_catch; 10=recrdev; 11=parm_prior; 12=parm_dev; 13=CrashPen; 14=Morphcomp; 15=Tag-comp; 16=Tag-negbin
 #like_comp fleet/survey  phase  value  sizefreq_method
-7          2             1      0      0    # turn off length at age data
+#7          2             1      0      0    # turn off length at age data
 #
 1 #1 # (0/1) read specs for more stddev reporting
 1  1 -1  2 # selex type (fleet), len=1/age=2, year, N selex bins (4 values)

@@ -42,18 +42,18 @@
 #
 #_growth_parms
 #_LO HI INIT PRIOR PR_type SD PHASE env-var use_dev dev_minyr dev_maxyr dev_stddev Block Block_Fxn
- 0.01 0.15 0.0273356 0.05 0 0.1 6 0 0 0 0 0 0 0 # NatM_p_1_Fem_GP_1
- 10 35 10.389 30 -1 99 2 0 0 0 0 0 0 0 # L_at_Amin_Fem_GP_1
- 40 120 64.4833 66 -1 99 1 0 0 0 0 0 0 0 # L_at_Amax_Fem_GP_1
- 0.01 0.2 0.0499046 0.05 -1 99 2 0 0 0 0 0 0 0 # VonBert_K_Fem_GP_1
- 0.05 0.2 0.2 0.19 -1 99 3 0 0 0 0 0 0 0 # CV_young_Fem_GP_1
- -2 2 -1.5304 0.1 -1 99 3 0 0 0 0 0 0 0 # CV_old_Fem_GP_1
- -3 3 -0.182832 0 -1 0.8 6 0 0 0 0 0 0 0 # NatM_p_1_Mal_GP_1
- -3 3 0.765088 0 -1 0.8 3 0 0 0 0 0 0 0 # L_at_Amin_Mal_GP_1
- -3 3 0.171713 0 -1 0.8 2 0 0 0 0 0 0 0 # L_at_Amax_Mal_GP_1
- -3 3 -1.01372 0 -1 0.8 3 0 0 0 0 0 0 0 # VonBert_K_Mal_GP_1
- -3 3 -0.329919 0 -1 0.8 3 0 0 0 0 0 0 0 # CV_young_Mal_GP_1
- -2 2 -0.573831 0.1 -1 99 3 0 0 0 0 0 0 0 # CV_old_Mal_GP_1
+ 0.01 0.15 0.0307042 0.05 0 0.1 6 0 0 0 0 0 0 0 # NatM_p_1_Fem_GP_1
+ 10 35 10 30 -1 99 2 0 0 0 0 0 0 0 # L_at_Amin_Fem_GP_1
+ 40 120 63.7936 66 -1 99 1 0 0 0 0 0 0 0 # L_at_Amax_Fem_GP_1
+ 0.01 0.2 0.0509082 0.05 -1 99 2 0 0 0 0 0 0 0 # VonBert_K_Fem_GP_1
+ 0.05 0.4 0.242141 0.19 -1 99 3 0 0 0 0 0 0 0 # CV_young_Fem_GP_1
+ -2 2 -2 0.1 -1 99 3 0 0 0 0 0 0 0 # CV_old_Fem_GP_1
+ -3 3 -0.11899 0 -1 0.8 6 0 0 0 0 0 0 0 # NatM_p_1_Mal_GP_1
+ -3 3 0.813457 0 -1 0.8 3 0 0 0 0 0 0 0 # L_at_Amin_Mal_GP_1
+ -3 3 0.158572 0 -1 0.8 2 0 0 0 0 0 0 0 # L_at_Amax_Mal_GP_1
+ -3 3 -0.948125 0 -1 0.8 3 0 0 0 0 0 0 0 # VonBert_K_Mal_GP_1
+ -2 2 -0.511879 0 -1 0.8 3 0 0 0 0 0 0 0 # CV_young_Mal_GP_1
+ -2 2 -0.616588 0.1 -1 99 3 0 0 0 0 0 0 0 # CV_old_Mal_GP_1
  -3 3 9.77e-006 2.09e-005 -1 99 -50 0 0 0 0 0 0 0 # Wtlen_1_Fem
  -3 4 3.17125 2.96956 -1 99 -50 0 0 0 0 0 0 0 # Wtlen_2_Fem
  38 39 38.78 40 -1 99 -50 0 0 0 0 0 0 0 # Mat50%_Fem
@@ -83,8 +83,8 @@
 #_Spawner-Recruitment
 3 #_SR_function: 2=Ricker; 3=std_B-H; 4=SCAA; 5=Hockey; 6=B-H_flattop; 7=survival_3Parm
 #_LO HI INIT PRIOR PR_type SD PHASE
- 4 8 4.77838 5 -1 99 1 # SR_LN(R0)
- 0.2 1 0.704947 0.6 1 0.07 7 # SR_BH_steep
+ 4 8 4.9069 5 -1 99 1 # SR_LN(R0)
+ 0.2 1 0.711895 0.6 1 0.07 7 # SR_BH_steep
  0 5 0.5 1 -1 99 -50 # SR_sigmaR
  -5 5 0 0 -1 99 -50 # SR_envlink
  -5 5 0 0 -1 99 -4 # SR_R1_offset
@@ -176,8 +176,8 @@
 #DisplayOnly 0 # Early_RecrDev_2006
 #DisplayOnly 0 # Early_RecrDev_2007
 #DisplayOnly 0 # Early_RecrDev_2008
-#DisplayOnly -6.5672e-005 # Main_RecrDev_2009
-#DisplayOnly 6.5672e-005 # Main_RecrDev_2010
+#DisplayOnly 0 # Main_RecrDev_2009
+#DisplayOnly 0 # Main_RecrDev_2010
 #
 #Fishing Mortality info 
 0.1 # F ballpark for annual F (=Z-M) for specified year
@@ -214,17 +214,17 @@
  10 0 0 0 # 1 fishery1
  10 0 0 0 # 2 survey1
 #_LO HI INIT PRIOR PR_type SD PHASE env-var use_dev dev_minyr dev_maxyr dev_stddev Block Block_Fxn
- 40 89 52.6268 55 0 99 3 0 0 0 0 0.5 0 0 # SizeSel_1P_1_fishery1
- -5 5 -3.53805 -2 0 99 3 0 0 0 0 0.5 0 0 # SizeSel_1P_2_fishery1
- 0 10 4.89652 5 0 99 3 0 0 0 0 0.5 0 0 # SizeSel_1P_3_fishery1
- 0 15 3.76008 7 0 99 3 0 0 0 0 0.5 0 0 # SizeSel_1P_4_fishery1
- -15 0 -12.5457 -15 0 99 3 0 0 0 0 0.5 0 0 # SizeSel_1P_5_fishery1
+ 40 89 52.5521 55 0 99 3 0 0 0 0 0.5 0 0 # SizeSel_1P_1_fishery1
+ -5 5 -2.61637 -2 0 99 3 0 0 0 0 0.5 0 0 # SizeSel_1P_2_fishery1
+ 0 10 4.88255 5 0 99 3 0 0 0 0 0.5 0 0 # SizeSel_1P_3_fishery1
+ 0 15 3.37128 7 0 99 3 0 0 0 0 0.5 0 0 # SizeSel_1P_4_fishery1
+ -15 0 -12.5541 -15 0 99 3 0 0 0 0 0.5 0 0 # SizeSel_1P_5_fishery1
  -999 5 -999 0 0 99 -3 0 0 0 0 0.5 0 0 # SizeSel_1P_6_fishery1
- 40 89 52.7712 55 0 99 3 0 0 0 0 0.5 0 0 # SizeSel_2P_1_survey1
- -5 5 -4.91107 -2 0 99 3 0 0 0 0 0.5 0 0 # SizeSel_2P_2_survey1
- 0 10 4.64861 5 0 99 3 0 0 0 0 0.5 0 0 # SizeSel_2P_3_survey1
- 0 15 3.77826 7 0 99 3 0 0 0 0 0.5 0 0 # SizeSel_2P_4_survey1
- -15 0 -12.4523 -15 0 99 3 0 0 0 0 0.5 0 0 # SizeSel_2P_5_survey1
+ 40 89 53.096 55 0 99 3 0 0 0 0 0.5 0 0 # SizeSel_2P_1_survey1
+ -5 5 -4.43147 -2 0 99 3 0 0 0 0 0.5 0 0 # SizeSel_2P_2_survey1
+ 0 10 4.70399 5 0 99 3 0 0 0 0 0.5 0 0 # SizeSel_2P_3_survey1
+ 0 15 3.7513 7 0 99 3 0 0 0 0 0.5 0 0 # SizeSel_2P_4_survey1
+ -15 0 -7.40369 -15 0 99 3 0 0 0 0 0.5 0 0 # SizeSel_2P_5_survey1
  -999 5 -999 0 0 99 -3 0 0 0 0 0.5 0 0 # SizeSel_2P_6_survey1
 #_Cond 0 #_custom_sel-env_setup (0/1) 
 #_Cond -2 2 0 0 -1 99 -2 #_placeholder when no enviro fxns
