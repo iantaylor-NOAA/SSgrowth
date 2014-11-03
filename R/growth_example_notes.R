@@ -8,8 +8,9 @@ if(FALSE){ # don't run anything if file is accidentally sourced into R (as Ian o
   devtools::install_github("r4ss/r4ss", ref="TA1.8testing")
   library(r4ss)
   
+  ###################################################################################
   ###
-  ## figures of simple growth curves
+  ##  figures of simple growth curves using "growth_illustration..." models
   #
 
   # read models
@@ -32,74 +33,108 @@ if(FALSE){ # don't run anything if file is accidentally sourced into R (as Ian o
   spA1  <- SS_output('small_pelagic_A1')
   spA1a <- SS_output('small_pelagic_A1a')
 
-  # rockfish simulation model
-  rock.sim1 <- SS_output('rockfish_simulation', covar=FALSE, forecast=FALSE)
-  rock0B    <- SS_output('rockfish_simulationB', covar=FALSE, forecast=FALSE)
-  rock7 <- SS_output('rockfish_estimation_7')
-  rock8 <- SS_output('rockfish_estimation_8')
+  ###################################################################################
+  ###
+  ##  illustration of conditional vs. marginal data using rockfish models
+  #
 
-  SSplotComparisons(SSsummarize(list(rock1,rock2)))
-  SSplotComparisons(SSsummarize(list(rock.sim1,rock5,rock5devs)),subplot=1:12)
-  SSplotComparisons(SSsummarize(list(rock.sim1,rock7,rock8)),subplot=1:12)
-
-  SS_plots(rock0B, png=TRUE, datplot=TRUE, aalresids=TRUE, aalyear=2001,
-           maxrows=1, maxcols=1, maxrows2=1, maxcols2=1, uncertainty=FALSE)
-  SS_plots(rock1, png=TRUE, datplot=TRUE, aalresids=TRUE, aalyear=2001)
-  SS_plots(rock2, png=TRUE, datplot=TRUE, aalresids=TRUE, aalyear=2001)
-  SS_plots(rock3, png=TRUE, datplot=TRUE, aalresids=TRUE, aalyear=2010)
-  SS_plots(rock4, png=TRUE, datplot=TRUE, aalresids=TRUE, aalyear=2010)
-  SS_plots(rock5, png=TRUE, datplot=TRUE, aalresids=TRUE, aalyear=2010,
-           maxrows=1, maxcols=1, maxrows2=1, maxcols2=1)
-  SS_plots(rock6, png=TRUE, datplot=TRUE, aalresids=TRUE, aalyear=2010,
-           maxrows=1, maxcols=1, maxrows2=1, maxcols2=1)
-
-  lab1max <- 8
-  lab2max <- 0.35
-  SSplotBiology(rock.sim1,subplot=2)
-  SSplotBiology(rock7,subplot=2)
-  SSplotBiology(rock8,subplot=2)
-  rm(lab1max)
-  rm(lab2max)
+  # note: data for conditional and marginal model was generated using code in
+  #       growth_data_simulation_notes.R
   
-  # run likelihood profile over CV parameter in new R GUI window
-  library(r4ss)
-  profilevec <- seq(0.05, 0.40, 0.05)
-  Nprofile <- length(profilevec)
-  setwd('c:/SS/R')
-  SS_profile(dir="c:/GitHub/SSgrowth/models/rockfish_estimation_7_profile",
-             masterctlfile="control_MLE.ss",
-             string="CV_young_Fem_GP_1",
-             profilevec=profilevec,
-             model="ss3_safe_win64")
-  # run likelihood profile over CV parameter in new R GUI window
-  library(r4ss)
-  profilevec <- seq(0.05, 0.40, 0.05)
-  Nprofile <- length(profilevec)
-  setwd('c:/SS/R')
-  SS_profile(dir="c:/GitHub/SSgrowth/models/rockfish_estimation_8_profile",
-             masterctlfile="control_MLE.ss",
-             string="CV_young_Fem_GP_1",
-             profilevec=profilevec,
-             model="ss3_safe_win64")
-  # read in output from profiling
-  profilevec <- seq(0.05, 0.40, 0.05)
-  Nprofile <- length(profilevec)
-  profile7 <- SSgetoutput(dirvec="rockfish_estimation_7_profile",
-                          keyvec=1:Nprofile)
-  profile8 <- SSgetoutput(dirvec="rockfish_estimation_8_profile",
-                          keyvec=1:Nprofile)
-  profile7$MLE <- rock7
-  profile7summary <- SSsummarize(profile7)
-  profile8$MLE <- rock8
-  profile8summary <- SSsummarize(profile8)
-  # plot profile using summary created above
-  SSplotProfile(profile7summary,           # summary object
-                profile.string = "CV_young_Fem_GP_1", # substring of profile parameter
-                profile.label="CV in length at age for young females") # axis label
-  SSplotProfile(profile8summary,           # summary object
-                profile.string = "CV_young_Fem_GP_1", # substring of profile parameter
-                profile.label="CV in length at age for young females") # axis label
+  # read rockfish simulation model
+  setwd('c:/GitHub/SSgrowth/models/')
+  rock.sim1 <- SS_output('extra_stuff/rockfish_simulation',
+                         covar=FALSE, forecast=FALSE)
+  rock.sim2 <- SS_output('extra_stuff/rockfish_simulationB',
+                         covar=FALSE, forecast=FALSE)
+  rock.cond <- SS_output('rockfish_conditional_ages')
+  rock.cond.highN <- SS_output('rockfish_conditional_ages_highN')
+  rock.marg <- SS_output('rockfish_marginal_ages')
+  rock.marg.highN <- SS_output('rockfish_marginal_ages_highN')
+
+  rock.summary.old <- SSsummarize(list(rock.cond,rock.marg,rock.sim2))
+  rock.summary <- SSsummarize(list(rock.cond,rock.marg400,rock.sim2))
+  rock.summary.highN <- SSsummarize(list(rock.cond.highN,rock.marg400_nowt.highN,rock.sim2))
+  rock.summary.big <- SSsummarize(list(rock.cond,rock.marg,rock.cond.highN,rock.marg.highN,rock.sim2))
+  SSplotComparisons(rock.summary.highN,
+                    png=doPNG, pheight=5,
+                    legendlabels=c("Conditional age model","Marginal age model",
+                        "Simulation model"),
+                    indexUncertainty=TRUE,
+                    densitynames = c("SPB_Virgin", "R0", "L_at","CV_"),
+                    plotdir='../figs/rockfish_comparisons_highN/')
+  SSplotComparisons(rock.summary.big,
+                    png=doPNG, pheight=5,
+                    legendlabels=c("Conditional age model","Marginal age model",
+                        "Conditional age model Nx10","Marginal age model Nx10",
+                        "Simulation model"),
+                    indexUncertainty=TRUE,legendloc="bottomleft",
+                    densitynames = c("SPB_Virgin", "R0", "L_at","CV_"),
+                    plotdir='../figs/rockfish_comparisons_big/')
+
+  # these values override default CV limits in SSplotBiology for better
+  # comparison of growth fits
+  lab1max <- 8    
+  lab2max <- 0.35
+  # make individual plots to show model results
+
+  # first set of plots
+  SS_plots(rock.sim2, png=doPNG, datplot=TRUE, aalresids=TRUE, aalyear=2001,
+           pheight=6, maxrows=1, maxcols=1, maxrows2=1, maxcols2=1, uncertainty=FALSE)
+  SS_plots(rock.cond, png=doPNG, datplot=TRUE, aalresids=TRUE, aalyear=2010,
+           pheight=6, maxrows=1, maxcols=1, maxrows2=1, maxcols2=1)
+  SS_plots(rock.marg, png=doPNG, datplot=TRUE, aalresids=TRUE, aalyear=2010,
+           pheight=6, maxrows=1, maxcols=1, maxrows2=1, maxcols2=1)
+  # plots with alternative dimensions for composition data
+  SS_plots(rock.cond, png=doPNG, datplot=TRUE, aalresids=TRUE, aalyear=2010,
+           plot=13:20,pheight=7, maxrows=1, maxcols=1, maxrows2=2, maxcols2=1)
+  SS_plots(rock.cond, png=doPNG, datplot=TRUE, aalresids=TRUE, aalyear=2010,
+           plot=13:14, pheight=5, maxrows=1, maxcols=1, maxrows2=1, maxcols2=1)
+  SS_plots(rock.marg, png=doPNG, datplot=TRUE, aalresids=TRUE, aalyear=2010,
+           plot=13:20,pheight=7, maxrows=1, maxcols=1, maxrows2=2, maxcols2=1)
+  SS_plots(rock.marg, png=doPNG, datplot=TRUE, aalresids=TRUE, aalyear=2010,
+           plot=13:20,pheight=5, maxrows=1, maxcols=1, maxrows2=1, maxcols2=1)
+  # high sample size plots
+  SS_plots(rock.cond.highN, png=doPNG, datplot=TRUE, aalresids=TRUE, aalyear=2010,
+           pheight=6, maxrows=1, maxcols=1, maxrows2=1, maxcols2=1)
+  SS_plots(rock.marg.highN, png=doPNG, datplot=TRUE, aalresids=TRUE, aalyear=2010,
+           pheight=6, maxrows=1, maxcols=1, maxrows2=1, maxcols2=1)
+
+  # commands in old r4ss package to get single-sex mean length at age
+  SS_plots(rock.marg, png=doPNG, datplot=TRUE, aalresids=TRUE, aalyear=2010,
+           plot=20,pheight=7, maxrows=1, maxcols=1, maxrows2=1, maxcols2=1,
+           printfolder="plots_old_r4ss")
+  SS_plots(rock.marg, png=doPNG, datplot=TRUE, aalresids=TRUE, aalyear=2010,
+           plot=20,pheight=7, maxrows=1, maxcols=1, maxrows2=1, maxcols2=1,
+           colvec=rep(NA,3),printfolder="plots_old_r4ssB")
+  SSplotComps(rock.marg, kind="L@A",print=doPNG,
+           plot=20,maxrows=1, maxcols=1, maxrows2=1, maxcols2=1,
+           linescol=rgb(0,0,0,0))
+  SS_plots(rock.marg.highN, png=doPNG, datplot=TRUE, aalresids=TRUE, aalyear=2010,
+           plot=20,pheight=7, maxrows=1, maxcols=1, maxrows2=1, maxcols2=1,
+           printfolder="plots_old_r4ss")
+  SSplotComps(rock.cond, subplot=1, kind="LEN", datonly=TRUE,print=TRUE,
+              pheight=6,maxrows=1,maxcols=1,showeffN=FALSE)
+  SSplotComps(rock.cond, subplot=1, kind="LEN", datonly=FALSE,print=TRUE,
+              pheight=6,maxrows=1,maxcols=1,showeffN=FALSE)
+
+  ## rm(.SavedPlots)
+  ## windows(record=TRUE)
+  ## SSplotBiology(rock.sim2,subplot=2,plotdir="../figs/rockfish_comparisons",
+  ##               pheight=6, print=FALSE)
+  ## SSplotBiology(rock.cond.highN,subplot=2,plotdir="../figs/rockfish_comparisons",
+  ##               pheight=6, print=FALSE)
+  ## SSplotBiology(rock.marg400_nowt.highN,subplot=2,plotdir="../figs/rockfish_comparisons",
+  ##               pheight=6, print=FALSE)
+  ## rm(lab1max)
+  ## rm(lab2max)
 
 
-
+  ###################################################################################
+  ###
+  ##  illustration of empirical weight-at-age using hake
+  #
+  hake <- SS_output('C:/github/SSgrowth/models/hake2014_simplified')
+  SS_plots(hake, png=TRUE, maxrows=7, maxcols=6, datplot=TRUE)
+  SS_plots(hake, png=TRUE, pheight=5, plot=24)
 } # end don't do anything

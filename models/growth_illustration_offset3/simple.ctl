@@ -1,8 +1,6 @@
-#V3.21e
-#C growth parameters are estimated
-#C spawner-recruitment bias adjustment Not tuned For optimality
-#_data_and_control_files: simple.dat // simple.ctl
-#_SS-V3.21d-safe;_06/09/2011;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_10
+#V3.24s
+#C model for illustrating growth curve parameterization
+#C not to be used for estimation
 1  #_N_Growth_Patterns
 1 #_N_Morphs_Within_GrowthPattern 
 #_Cond 1 #_Morph_between/within_stdev_ratio (no read if N_morphs=1)

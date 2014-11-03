@@ -66,12 +66,20 @@ if(FALSE){
                     rockdat0B$agecomp$Lbin_lo<0,-(1:9)] <- marginal.ages.new.f
   rockdat0B$agecomp[rockdat0B$agecomp$Gender==2 &
                     rockdat0B$agecomp$Lbin_lo<0,-(1:9)] <- marginal.ages.new.m
+  # correct sample sizes for marginal age data
+  rockdat0B$agecomp$Nsamp[rockdat0B$agecomp$Gender==1 &
+                          rockdat0B$agecomp$Lbin_lo<0] <- sum(marginal.ages.new.f)
+  rockdat0B$agecomp$Nsamp[rockdat0B$agecomp$Gender==2 &
+                          rockdat0B$agecomp$Lbin_lo<0] <- sum(marginal.ages.new.m)
+  
   # change sample sizes of mean length- and weight-at-length data to marginal age comp
   for(irow in 1:2){
     rockdat0B$MeanSize_at_Age_obs[irow,
                                   grep("N_",names(rockdat0B$MeanSize_at_Age_obs))] <-
                                     marginal.ages.new
   }
+  SS_writedat(datlist=rockdat0B, overwrite=TRUE,
+              outfile="rockfish_conditional_ages/rockfish_simulated_data_conditional_ages_2010.ss")
 
   #### new marginal data file
   # turn on influence of marginal data and
@@ -79,11 +87,29 @@ if(FALSE){
   rockdat0C <- rockdat0B
   rockdat0C$agecomp$FltSvy[rockdat0C$agecomp$Lbin_hi<0] <- 2
   rockdat0C$agecomp$FltSvy[rockdat0C$agecomp$Lbin_hi>0] <- -2
-
-
-  SS_writedat(datlist=rockdat0B, overwrite=TRUE,
-              outfile="rockfish_estimation_5/rockfish_simulated_data_conditional_ages_2010.ss")
   SS_writedat(datlist=rockdat0C, overwrite=TRUE,
-              outfile="rockfish_estimation_6/rockfish_simulated_data_marginal_ages_2010.ss")
+              outfile="rockfish_marginal_ages/rockfish_simulated_data_marginal_ages_2010.ss")
+
+  #### marginal data file with 10x sample size
+  rockdat.marg <- SS_readdat('rockfish_marginal_ages/data.ss_new')
+  rockdat.marg10x <- rockdat.marg
+  rockdat.marg10x$agecomp$Nsamp <- 10*rockdat.marg10x$agecomp$Nsamp
+  sampcolumns <- grep("N_",names(rockdat.marg10x$MeanSize_at_Age_obs))
+  rockdat.marg10x$MeanSize_at_Age_obs[,sampcolumns] <-
+    10*rockdat.marg10x$MeanSize_at_Age_obs[,sampcolumns]
+  SS_writedat(datlist=rockdat.marg10x, overwrite=TRUE,
+              outfile="rockfish_marginal__highN/rockfish_simulated_data_marginal_ages_2010.ss")
+
+  #### conditional data file with 10x sample size
+  rockdat.cond <- SS_readdat('rockfish_conditional_ages/data.ss_new')
+  rockdat.cond10x <- rockdat.cond
+  rockdat.cond10x$agecomp$Nsamp <- 10*rockdat.cond10x$agecomp$Nsamp
+  sampcolumns <- grep("N_",names(rockdat.cond10x$MeanSize_at_Age_obs))
+  rockdat.cond10x$MeanSize_at_Age_obs[,sampcolumns] <-
+    10*rockdat.cond10x$MeanSize_at_Age_obs[,sampcolumns]
+  SS_writedat(datlist=rockdat.cond10x, overwrite=TRUE,
+              outfile="rockfish_conditional_ages_highN/rockfish_simulated_data_conditional_ages_2010.ss")
+  
+
 
 }

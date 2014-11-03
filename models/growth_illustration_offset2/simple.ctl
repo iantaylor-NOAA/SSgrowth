@@ -1,10 +1,8 @@
-#V3.21e
-#C growth parameters are estimated
-#C spawner-recruitment bias adjustment Not tuned For optimality
-#_data_and_control_files: simple.dat // simple.ctl
-#_SS-V3.21d-safe;_06/09/2011;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_10
+#V3.24s
+#C model for illustrating growth curve parameterization
+#C not to be used for estimation
 1  #_N_Growth_Patterns
-1 #_N_Morphs_Within_GrowthPattern 
+1 #_N_Morphs_Within_GrowthPattern
 #_Cond 1 #_Morph_between/within_stdev_ratio (no read if N_morphs=1)
 #_Cond  1 #vector_Morphdist_(-1_in_first_val_gives_normal_approx)
 #
@@ -17,10 +15,10 @@
 #_Cond 1 1 1 2 4 10 # example move definition for seas=1, morph=1, source=1 dest=2, age1=4, age2=10
 #
 0 #_Nblock_Patterns
-#_Cond 0 #_blocks_per_pattern 
+#_Cond 0 #_blocks_per_pattern
 # begin and end years of blocks
 #
-0.5 #_fracfemale 
+0.5 #_fracfemale
 0 #_natM_type:_0=1Parm; 1=N_breakpoints;_2=Lorenzen;_3=agespecific;_4=agespec_withseasinterpolate
   #_no additional input for selected M option; read 1P per morph
 1 # GrowthModel: 1=vonBert with L1&L2; 2=Richards with L1&L2; 3=not implemented; 4=not implemented
@@ -38,38 +36,38 @@
 #
 #_growth_parms
 #_LO HI INIT PRIOR PR_type SD PHASE env-var use_dev dev_minyr dev_maxyr dev_stddev Block Block_Fxn
-#_LO	HI	INIT	PRIOR	PR_type	SD	PHASE	env-var	use_dev	dev_minyr	dev_maxyr	dev_stddev	Block	Block_Fxn		
-0.05	0.15	0.01	0.1	-1	0.8	-3	0	0	0	0	0	0	0	#	NatM_p_1_Fem_GP_1
--10	45	30	36	0	10	2	0	0	0	0	0	0	0	#	L_at_Amin_Fem_GP_1
-40	90	80	70	0	10	4	0	0	0	0	0	0	0	#	L_at_Amax_Fem_GP_1
-0.05	0.25	0.07	0.15	0	0.8	4	0	0	0	0	0	0	0	#	VonBert_K_Fem_GP_1
-0.05	0.25	0.10	0.1	-1	0.8	-3	0	0	0	0	0	0	0	#	CV_young_Fem_GP_1
-0.05	0.25	0.15	0.1	-1	0.8	-3	0	0	0	0	0	0	0	#	CV_old_Fem_GP_1
-0.05	0.15	0.1	0.1	-1	0.8	-3	0	0	0	0	0	0	0	#	NatM_p_1_Mal_GP_1
--5	5	-0.2	0       -1	10	-3	0	0	0	0	0	0	0	#	L_at_Amin_Mal_GP_1
--5	5	-0.4	0       0	10	4	0	0	0	0	0	0	0	#	L_at_Amax_Mal_GP_1
--5	5	-0.05	0   	0	0.8	4	0	0	0	0	0	0	0	#	VonBert_K_Mal_GP_1
--5	5	-0.10	0   	-1	0.8	-3	0	0	0	0	0	0	0	#	CV_young_Mal_GP_1
--5	5	-0.80	0   	-1	0.8	-3	0	0	0	0	0	0	0	#	CV_old_Mal_GP_1
--3	3	2.44E-6	2.44E-6	-1	0.8	-3	0	0	0	0	0	0	0	#	Wtlen_1_Fem
--3	4	3.34694	3.34694	-1	0.8	-3	0	0	0	0	0	0	0	#	Wtlen_2_Fem
-50	60	55	55	-1	0.8	-3	0	0	0	0	0	0	0	#	Mat50%_Fem
--3	3	-0.25	-0.25	-1	0.8	-3	0	0	0	0	0	0	0	#	Mat_slope_Fem
--3	3	1	1	-1	0.8	-3	0	0	0	0	0	0	0	#	Eggs/kg_inter_Fem
--3	3	0	0	-1	0.8	-3	0	0	0	0	0	0	0	#	Eggs/kg_slope_wt_Fem
--3	3	2.44E-6	2.44E-6	-1	0.8	-3	0	0	0	0	0	0	0	#	Wtlen_1_Mal
--3	4	3.34694	3.34694	-1	0.8	-3	0	0	0	0	0	0	0	#	Wtlen_2_Mal
-0	0	0	0	-1	0	-4	0	0	0	0	0	0	0	#	RecrDist_GP_1
-0	0	0	0	-1	0	-4	0	0	0	0	0	0	0	#	RecrDist_Area_1
-0	0	0	0	-1	0	-4	0	0	0	0	0	0	0	#	RecrDist_Seas_1
-0	0	0	0	-1	0	-4	0	0	0	0	0	0	0	#	CohortGrowDev
+#_LO    HI      INIT    PRIOR   PR_type SD      PHASE   env-var use_dev dev_minyr       dev_maxyr       dev_stddev      Block   Block_Fxn
+0.05    0.15    0.01    0.1     -1      0.8     -3      0       0       0       0       0       0       0       #       NatM_p_1_Fem_GP_1
+-10     45      30      36      0       10      2       0       0       0       0       0       0       0       #       L_at_Amin_Fem_GP_1
+40      90      80      70      0       10      4       0       0       0       0       0       0       0       #       L_at_Amax_Fem_GP_1
+0.05    0.25    0.07    0.15    0       0.8     4       0       0       0       0       0       0       0       #       VonBert_K_Fem_GP_1
+0.05    0.25    0.10    0.1     -1      0.8     -3      0       0       0       0       0       0       0       #       CV_young_Fem_GP_1
+0.05    0.25    0.15    0.1     -1      0.8     -3      0       0       0       0       0       0       0       #       CV_old_Fem_GP_1
+0.05    0.15    0.1     0.1     -1      0.8     -3      0       0       0       0       0       0       0       #       NatM_p_1_Mal_GP_1
+-5      5       -0.2    0       -1      10      -3      0       0       0       0       0       0       0       #       L_at_Amin_Mal_GP_1
+-5      5       -0.4    0       0       10      4       0       0       0       0       0       0       0       #       L_at_Amax_Mal_GP_1
+-5      5       -0.05   0       0       0.8     4       0       0       0       0       0       0       0       #       VonBert_K_Mal_GP_1
+-5      5       -0.10   0       -1      0.8     -3      0       0       0       0       0       0       0       #       CV_young_Mal_GP_1
+-5      5       -0.80   0       -1      0.8     -3      0       0       0       0       0       0       0       #       CV_old_Mal_GP_1
+-3      3       2.44E-6 2.44E-6 -1      0.8     -3      0       0       0       0       0       0       0       #       Wtlen_1_Fem
+-3      4       3.34694 3.34694 -1      0.8     -3      0       0       0       0       0       0       0       #       Wtlen_2_Fem
+50      60      55      55      -1      0.8     -3      0       0       0       0       0       0       0       #       Mat50%_Fem
+-3      3       -0.25   -0.25   -1      0.8     -3      0       0       0       0       0       0       0       #       Mat_slope_Fem
+-3      3       1       1       -1      0.8     -3      0       0       0       0       0       0       0       #       Eggs/kg_inter_Fem
+-3      3       0       0       -1      0.8     -3      0       0       0       0       0       0       0       #       Eggs/kg_slope_wt_Fem
+-3      3       2.44E-6 2.44E-6 -1      0.8     -3      0       0       0       0       0       0       0       #       Wtlen_1_Mal
+-3      4       3.34694 3.34694 -1      0.8     -3      0       0       0       0       0       0       0       #       Wtlen_2_Mal
+0       0       0       0       -1      0       -4      0       0       0       0       0       0       0       #       RecrDist_GP_1
+0       0       0       0       -1      0       -4      0       0       0       0       0       0       0       #       RecrDist_Area_1
+0       0       0       0       -1      0       -4      0       0       0       0       0       0       0       #       RecrDist_Seas_1
+0       0       0       0       -1      0       -4      0       0       0       0       0       0       0       #       CohortGrowDev
 #
 #_Cond 0  #custom_MG-env_setup (0/1)
 #_Cond -2 2 0 0 -1 99 -2 #_placeholder when no MG-environ parameters
 #
 #_Cond 0  #custom_MG-block_setup (0/1)
 #_Cond -2 2 0 0 -1 99 -2 #_placeholder when no MG-block parameters
-#_Cond No MG parm trends 
+#_Cond No MG parm trends
 #
 #_seasonal_effects_on_biology_parms
  0 0 0 0 0 0 0 0 0 0 #_femwtlen1,femwtlen2,mat1,mat2,fec1,fec2,Malewtlen1,malewtlen2,L1,K
@@ -91,7 +89,7 @@
 1 #do_recdev:  0=none; 1=devvector; 2=simple deviations
 1971 # first year of main recr_devs; early devs can preceed this era
 2001 # last year of main recr_devs; forecast devs start in following year
-2 #_recdev phase 
+2 #_recdev phase
 1 # (0/1) to read 13 advanced options
  0 #_recdev_early_start (0=none; neg value makes relative to recdev_start)
  -4 #_recdev_early_phase
@@ -165,7 +163,7 @@
 #DisplayOnly 0 # Impl_err_2010
 #DisplayOnly 0 # Impl_err_2011
 #
-#Fishing Mortality info 
+#Fishing Mortality info
 0.3 # F ballpark for tuning early phases
 -2001 # F ballpark year (neg value to disable)
 3 # F_Method:  1=Pope; 2=instan. F; 3=hybrid (hybrid is recommended)
@@ -215,11 +213,11 @@
  0 40 40 6 -1 99 -1 0 0 0 0 0 0 0 # AgeSel_2P_2_SURVEY1
  0 40 0 5 -1 99 -1 0 0 0 0 0 0 0 # AgeSel_3P_1_SURVEY2
  0 40 0 6 -1 99 -1 0 0 0 0 0 0 0 # AgeSel_3P_2_SURVEY2
-#_Cond 0 #_custom_sel-env_setup (0/1) 
+#_Cond 0 #_custom_sel-env_setup (0/1)
 #_Cond -2 2 0 0 -1 99 -2 #_placeholder when no enviro fxns
-#_Cond 0 #_custom_sel-blk_setup (0/1) 
+#_Cond 0 #_custom_sel-blk_setup (0/1)
 #_Cond -2 2 0 0 -1 99 -2 #_placeholder when no block usage
-#_Cond No selex parm trends 
+#_Cond No selex parm trends
 #_Cond -4 # placeholder for selparm_Dev_Phase
 #_Cond 0 #_env/block/dev_adjust_method (1=standard; 2=logistic trans to keep in base parm bounds; 3=standard w/ no bound check)
 #
@@ -228,7 +226,7 @@
 #_Cond -6 6 1 1 2 0.01 -4 0 0 0 0 0 0 0  #_placeholder if no parameters
 #
 1 #_Variance_adjustments_to_input_values
-#_fleet: 1 2 3 
+#_fleet: 1 2 3
   0 0 0 #_add_to_survey_CV
   0 0 0 #_add_to_discard_stddev
   0 0 0 #_add_to_bodywt_CV
@@ -240,7 +238,7 @@
 1 #_sd_offset
 #
 3 # number of changes to make to default Lambdas (default value is 1.0)
-# Like_comp codes:  1=surv; 2=disc; 3=mnwt; 4=length; 5=age; 6=SizeFreq; 7=sizeage; 8=catch; 
+# Like_comp codes:  1=surv; 2=disc; 3=mnwt; 4=length; 5=age; 6=SizeFreq; 7=sizeage; 8=catch;
 # 9=init_equ_catch; 10=recrdev; 11=parm_prior; 12=parm_dev; 13=CrashPen; 14=Morphcomp; 15=Tag-comp; 16=Tag-negbin
 #like_comp fleet/survey  phase  value  sizefreq_method
  1 2 2 1 1
@@ -265,7 +263,7 @@
 #  1 1 1 1 #_parameter-priors
 #  1 1 1 1 #_parameter-dev-vectors
 #  1 1 1 1 #_crashPenLambda
-1 # (0/1) read specs for more stddev reporting 
+1 # (0/1) read specs for more stddev reporting
  1 1 -1 5 1 5 1 -1 5 # selex type, len/age, year, N selex bins, Growth pattern, N growth ages, NatAge_area(-1 for all), NatAge_yr, N Natages
  5 15 25 35 43 # vector with selex std bin picks (-1 in first bin to self-generate)
  1 2 14 26 40 # vector with growth std bin picks (-1 in first bin to self-generate)

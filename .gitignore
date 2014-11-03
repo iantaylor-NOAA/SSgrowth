@@ -21,5 +21,7 @@ ss3_safe_win64.par
 runnumber.ss
 variance
 models/*/plots/
+models/*/plots*/*
+models/extra_stuff/*/plots/
 models/old/*
 ~$*
