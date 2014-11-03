@@ -7,7 +7,14 @@ Not yet sure how GitHub will work for this use.
 Modeling growth in stock assessments using the Stock Synthesis modeling framework
 
 A half-day session held on Monday (November 3rd) afternoon by Ian Taylor
+
+===========
+
+Download files by clicking "Dowload Zip" on bottom-right corner of this page
+
+===========
 Outline
+
 * Parameterization of growth curves
    * Overview of how many growth parameters are estimated in typical assessments
    * Specification of von Bertalanffy growth curve in SS
