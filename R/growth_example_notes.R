@@ -137,4 +137,11 @@ if(FALSE){ # don't run anything if file is accidentally sourced into R (as Ian o
   hake <- SS_output('C:/github/SSgrowth/models/hake2014_simplified')
   SS_plots(hake, png=TRUE, maxrows=7, maxcols=6, datplot=TRUE)
   SS_plots(hake, png=TRUE, pheight=5, plot=24)
+
+  ###################################################################################
+  ###
+  ##  illustration of age-specific-k (model not shared on GitHub)
+  #
+  bet <- SS_output('C:/ss/Rishi/re3stanzagrowthcurve', covar=FALSE)
+  SS_plots(bet, png=TRUE, uncertainty=FALSE)
 } # end don't do anything
