@@ -25,3 +25,4 @@ models/*/plots*/*
 models/extra_stuff/*/plots/
 models/old/*
 ~$*
+*.Rdata
