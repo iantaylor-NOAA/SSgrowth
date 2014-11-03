@@ -179,12 +179,11 @@
 #like_comp fleet/survey  phase  value  sizefreq_method
 7          2             1      0      0    # turn off length at age data
 #
-1 #1 # (0/1) read specs for more stddev reporting
+1 # (0/1) read specs for more stddev reporting 
 1  1 -1  2 # selex type (fleet), len=1/age=2, year, N selex bins (4 values)
-1  10   # Growth pattern, N growth ages (2 values)
-1 -1  2 # NatAge_area(-1 for all), NatAge_yr, N Natages (3 values)
--1 1 # placeholder for vector of selex bins to be reported
- # growth ages
-  5 10 15 20 25 30 35 40 45 50
--1 1 # NatAges
-999
+1  10      # Growth pattern, N growth ages (2 values)
+1 -1  2    # NatAge_area(-1 for all), NatAge_yr, N Natages (3 values)
+-1 1       # vector with selex std bin picks (-1 in first bin to self-generate)
+5 10 15 20 25 30 35 40 45 50 # vector with growth std bin picks (-1 in first bin to self-generate)
+-1 1       # vector with NatAge std bin picks (-1 in first bin to self-generate)
+999 # end of control file
