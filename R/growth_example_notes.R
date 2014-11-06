@@ -3,7 +3,6 @@
 ### Ian Taylor
 ### 11/2/14
 
-
 if(FALSE){ # don't run anything if file is accidentally sourced into R (as Ian often does)
 
   devtools::install_github("r4ss/r4ss", ref="TA1.8testing")
@@ -146,5 +145,3 @@ if(FALSE){ # don't run anything if file is accidentally sourced into R (as Ian o
   bet <- SS_output('C:/ss/Rishi/re3stanzagrowthcurve', covar=FALSE)
   SS_plots(bet, png=TRUE, uncertainty=FALSE)
 } # end don't do anything
-
-# this extra line is for testing GitHub
